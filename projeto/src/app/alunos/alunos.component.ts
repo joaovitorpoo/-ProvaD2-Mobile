@@ -8,12 +8,17 @@ import { aluno } from '../alunos/aluno.model'
   styleUrls: ['./alunos.component.css']
 })
 export class AlunosComponent implements OnInit {
+  a: aluno;
 
-  constructor(private alunosServiceService: AlunosServiceService) { }
+  constructor(private alunosServiceService: AlunosServiceService) { 
+    
+  }
 
   ngOnInit(): void {
-    var a: aluno = this.alunosServiceService.get();
-    
+    this.a = this.alunosServiceService.get();
+    console.log (this.a.RA);
+    console.log (this.a.nome);
+    console.log (this.a.idade);
   }
 
 }
